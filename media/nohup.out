@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "watchdog_fotoresize.py", line 4, in <module>
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'

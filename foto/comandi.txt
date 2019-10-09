@@ -1,0 +1,3 @@
+workon gse3.6
+cd ./foto
+nohup python3 watchdog_fotoresize.py &
