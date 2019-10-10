@@ -174,6 +174,11 @@ def EXPORT4IBM(modeladmin, request, queryset):
         else:
             datetime_ingaggio = ""
 
+        if (objects.note != None):
+            note = objects.note.upper()
+        else:
+            note = ""
+
         row = [
             objects.tecnico.upper(),
             objects.tipo_servizio,
@@ -194,7 +199,7 @@ def EXPORT4IBM(modeladmin, request, queryset):
             objects.descrizione_richiesta.upper(),
             objects.soluzione_adottata.upper(),
             objects.stato_intervento.upper(),
-            objects.note.upper(),
+            objects.note,
             objects.tipo_ingaggio.upper(),
 
 
