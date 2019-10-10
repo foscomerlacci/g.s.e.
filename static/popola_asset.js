@@ -3,7 +3,7 @@
  */
 
 
-
+(function($) {
 // inspect html to check id of category select dropdown.
             $(document).on('focusin', "select#id_asset", function(){
                 $.getJSON("/get_Asset/",{id: $("select#id_fk_beneficiario").val()}, function(j){
@@ -19,3 +19,4 @@
                  });
              });
 
+})(django.jQuery);

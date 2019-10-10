@@ -2,7 +2,7 @@
  * Created by utente on 19/07/18.
  */
 
-$(document).ready(function() {
+(function($) {
 // inspect html to check id of category select dropdown.
             $(document).on('focusin', "select#id_location", function(){
 
@@ -13,4 +13,4 @@ $(document).ready(function() {
 
              });
 
-});
+})(django.jQuery);

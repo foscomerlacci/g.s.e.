@@ -49,5 +49,5 @@
     $("#.submit-row.default").click(function(){
     alert("The paragraph was clicked.");
 });
-});
+})(django.jQuery);
 

@@ -1,7 +1,7 @@
 /**
  * Created by utente on 10/04/18.
  */
-
+(function($) {
     $(document).ready(function () {                                        // ad ogni variazione della selectbox viene aggiornato la variabile
         $('#id_tipo_dispositivo').on('change', function () {
             var tipo = $('#id_tipo_dispositivo :selected').val();
@@ -20,3 +20,4 @@
         });
 
     });
+})(django.jQuery);

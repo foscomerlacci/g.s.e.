@@ -782,11 +782,6 @@ table#change-history tbody th {
     width: 100%;
 }
 
-#content-stats {
-    float: left;
-    width: 100%;
-}
-
 #content-related {
     float: right;
     width: 260px;
@@ -816,10 +811,6 @@ table#change-history tbody th {
 }
 
 .colSM #content-main {
-    float: right;
-}
-
-.colSM #content-stats {
     float: right;
 }
 

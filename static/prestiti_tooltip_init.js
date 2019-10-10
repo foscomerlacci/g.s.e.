@@ -8,7 +8,7 @@
 $(document).ready(function() {
 
 
-                $('#id_prestiti_allegato_set-0-allegato').tooltipster({
+                $('#prestiti_allegato_set-group').tooltipster({
                     theme: 'tooltipster-punk',
                     trigger: 'hover',
                     animation: 'grow',

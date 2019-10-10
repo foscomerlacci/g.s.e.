@@ -2,8 +2,10 @@
  * Created by utente on 16/05/18.
  */
 
-$(document).ready(function() {
+(function($) {
+    $(function() {
 
         $("#searchbar").attr('placeholder', "produttore, modello")
 
-});
+    });
+})(django.jQuery);

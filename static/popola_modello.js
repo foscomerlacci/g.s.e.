@@ -2,7 +2,7 @@
  * Created by utente on 20/04/18.
  */
 
-$(document).ready(function() {
+(function($) {
 // inspect html to check id of category select dropdown.
             $(document).on('change', "select#id_produttore", function(){
 
@@ -18,4 +18,4 @@ $(document).ready(function() {
                  });
              });
 
-});
+})(django.jQuery);

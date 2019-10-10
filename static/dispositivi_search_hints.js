@@ -3,9 +3,10 @@
  */
 // $("#searchbar").attr('title', "Click here to search for someone")
 
-
-$(document).ready(function() {
+(function($) {
+    $(function() {
 
         $("#searchbar").attr('placeholder', "asset, seriale, produttore, modello, assegnatario")
 
     });
+})(django.jQuery);

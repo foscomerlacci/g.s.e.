@@ -3,7 +3,7 @@
  */
 
 
-$(document).ready(function() {
+(function($) {
 // inspect html to check id of category select dropdown.
             $(document).on('change', "select#id_tipo_dispositivo", function(){
 
@@ -21,4 +21,4 @@ $(document).ready(function() {
                  });
              });
 
-});
+})(django.jQuery);
