@@ -2,13 +2,13 @@
  * Created by utente on 03/10/19.
  */
 
-(function($) {
+// (function($) {
 
 $(document).ready(function() {
 
 
             if ($("li.success").is(":visible")) {
-                    $("li.success").hide();
+                    $("li.success").hide(1);
 
                     notif({
                     msg: "<b>salvataggio corretto</b>",
@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 
             }else if($("p.errornote").is(":visible")) {
-                    $("p.errornote").hide();
+                    $("p.errornote").hide(1);
 
                     notif({
                     msg: "<b>si è verificato un errore</b>",
@@ -35,4 +35,4 @@ $(document).ready(function() {
 
 });
 
-})(django.jQuery);
+// })(django.jQuery);

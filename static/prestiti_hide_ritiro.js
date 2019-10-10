@@ -9,7 +9,7 @@
         var
             to_hide = $('.form-row.field-tecnico_ritiro.field-fine_prestito');
 
-        to_hide.hide();
+        to_hide.hide(1);
 
     });
 })(django.jQuery);

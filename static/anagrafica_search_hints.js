@@ -3,10 +3,18 @@
  */
 // $("#searchbar").attr('title', "Click here to search for someone")
 
+// (function($) {
+//     $(function() {
+//
+//         $("#searchbar").attr('placeholder', "matricola, nome, cognome o ruolo")
+//
+//     });
+// })(django.jQuery);
+
 (function($) {
     $(function() {
 
         $("#searchbar").attr('placeholder', "matricola, nome, cognome o ruolo")
 
     });
-})(django.jQuery);
+});

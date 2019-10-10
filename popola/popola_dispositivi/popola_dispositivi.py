@@ -21,6 +21,15 @@ def seriale():
     seriale = "".join(random.choice(string.digits) for x in range(10))
     return seriale
 
+db = sqlite3.connect('../../gse.sqlite3')   # qui inserisco tipo, produttore e modello
+cur = db.cursor()
+with open("sql.txt", "r") as query:
+    lines = query.readlines()
+for line in lines:
+    cur.execute(line)
+db.commit()
+db.close()
+
 db = sqlite3.connect('../../gse.sqlite3')
 cur = db.cursor()
 cur.execute("""SELECT id, fk_produttore_id, fk_tipo_dispositivo_id, modello FROM dispositivi_modello""")  # qui estrae tutti i modelli di dispositivo e ottengo "lista_dispositivi"

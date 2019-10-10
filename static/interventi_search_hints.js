@@ -3,10 +3,10 @@
  */
 // $("#searchbar").attr('title', "Click here to search for someone")
 
-(function($) {
+$(document).ready(function() {
     $(function() {
 
         $("#searchbar").attr('placeholder', "dispositivo, beneficiario, tipo intervento")
 
     });
-})(django.jQuery);
+});

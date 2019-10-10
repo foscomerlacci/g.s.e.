@@ -18,14 +18,14 @@
 // })(django.jQuery);
 
 
-(function($) {
+
 
 $(document).ready(function() {
 
         $("input.default").click(function() {
 
 
-            $("div.submit-row").hide();
+            $("div.submit-row").hide(1);
 
                 // notif({
                 //     msg: "<b>salvataggio corretto</b>",
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 });
 
-})(django.jQuery);
+
 
 
 

@@ -3,10 +3,9 @@
  */
 // $("#searchbar").attr('title', "Click here to search for someone")
 
-(function($) {
-    $(function() {
+
+$(function() {
 
         $("#searchbar").attr('placeholder', "cognome, servizio")
 
-    });
-})(django.jQuery);
+});

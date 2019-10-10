@@ -5,7 +5,7 @@
 
         function toggleVerified(value) {
              if (value === 'seg') {
-                verified.hide();
+                verified.hide(1);
              } else {
                  verified.show();
              }

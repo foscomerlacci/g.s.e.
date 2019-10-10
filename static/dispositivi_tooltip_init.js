@@ -8,7 +8,7 @@
 $(document).ready(function() {
 
 
-                $('#id_allegato_set-0-allegato').tooltipster({
+                $('#allegato_set-group').tooltipster({
                     theme: 'tooltipster-punk',
                     trigger: 'hover',
                     animation: 'grow',
@@ -40,4 +40,4 @@ $(document).ready(function() {
 
 
 
-        });
+});

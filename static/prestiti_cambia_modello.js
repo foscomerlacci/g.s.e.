@@ -11,4 +11,4 @@
                      $("input#id_seriale").val("");
                  });
 
-})(django.jQuery);
+});
