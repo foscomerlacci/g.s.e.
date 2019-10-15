@@ -186,6 +186,8 @@ class UtenteAdmin(admin.ModelAdmin):
         )
 
 
+
+
 admin.site.register(Utente, UtenteAdmin)
 
 # admin.site.register(Associazione, AssociazioneAdmin)
@@ -194,3 +196,4 @@ admin.site_url = None
 # admin.site.site_header = ('Gestione Supporto Enhanced')
 # admin.site.site_title = ('Gestione Supporto Enhanced')
 # admin.site.index_title = ('Gestione Supporto Enhanced')
+

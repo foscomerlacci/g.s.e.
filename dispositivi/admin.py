@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.conf.urls import url
+
 from django.shortcuts import get_object_or_404
 
 from dispositivi.toolbox import export_tracciato_xls
@@ -237,3 +238,19 @@ admin.site_url = None
 # admin.site.site_header = ('Gestione Supporto Enhanced')
 # admin.site.site_title = ('Gestione Supporto Enhanced')
 # admin.site.index_title = ('Gestione Supporto Enhanced')
+
+###############################################################################################
+#  magico override della admin page degli utenti registrati
+###############################################################################################
+
+from django.contrib import admin
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin
+
+class MyUserAdmin(UserAdmin):
+    list_display = ['first_name', 'last_name', 'is_staff', 'is_active', 'last_login']
+
+admin.site.unregister(User)
+admin.site.register(User, MyUserAdmin)
+
+################################################################################################
