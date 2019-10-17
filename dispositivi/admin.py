@@ -240,10 +240,10 @@ admin.site_url = None
 # admin.site.index_title = ('Gestione Supporto Enhanced')
 
 ###############################################################################################
-#  magico override della admin page degli utenti registrati
+#  magico override della admin page degli utenti registrati per modificare i campi di default
 ###############################################################################################
 
-from django.contrib import admin
+
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 

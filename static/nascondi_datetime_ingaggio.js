@@ -1,5 +1,4 @@
-
-$(document).ready(function() {
+(function($) {
     $(function() {
         var selectField = $('#id_tipo_ingaggio'),
             verified = $('.form-row.field-datetime_ingaggio');
@@ -22,5 +21,5 @@ $(document).ready(function() {
             toggleVerified($(this).val());
         });
     });
-});
+})(django.jQuery);
 
