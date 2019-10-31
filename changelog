@@ -7,3 +7,4 @@ inserito nella cartella media il watchdog per il resize automatico dei soli jpg 
 aggiunto sbarramento antiFragolino (double_click_prevent) su  interventi/admin, anagrafica/admin, dispositivi/admin, prestiti/admin e wiki/admin
 aggiunti popup "inserimento corretto" e "si è verificato un errore" su tutte le pagine
 ##########################################################################################
+su dispositivi/admin aggiunto filtro in uso/dismesso

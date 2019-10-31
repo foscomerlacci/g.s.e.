@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import SimpleListFilter
 
 
-## qui creo il filtro personalizzato per mostrare di default solo i dispositivi in uso a utenti attivi ################
+## qui creo il filtro personalizzato per mostrare di default solo i dispositivi assegnati a utenti attivi ################
 
 class FiltroUtenteAttivo(SimpleListFilter):
     title = _('utente')
@@ -44,6 +44,43 @@ class FiltroUtenteAttivo(SimpleListFilter):
 
 
 #######################################################################################################################
+
+
+
+## qui creo il filtro personalizzato per mostrare di default solo i dispositivi NON dismessi ################
+
+class FiltroDispositivoDismesso(SimpleListFilter):
+    title = _('dispositivo')
+    parameter_name = 'data_dismissione'
+
+    def lookups(self, request, model_admin):
+        return (
+            (None, _('in uso')),
+            ('False', _('dismesso')),
+            ('tutti', _('tutti')),
+        )
+
+    def choices(self, cl):
+        for lookup, title in self.lookup_choices:
+            yield {
+                'selected': self.value() == lookup,
+                'query_string': cl.get_query_string({
+                    self.parameter_name: lookup,
+                }, []),
+                'display': title,
+            }
+
+    def queryset(self, request, queryset):
+        if self.value() is None:
+            return queryset.filter(data_dismissione__isnull=True)
+        if self.value() == 'False':
+            return queryset.filter(data_dismissione__isnull=False)
+
+
+#######################################################################################################################
+
+
+
 
 
 
@@ -117,7 +154,7 @@ class DispositivoAdmin(admin.ModelAdmin):
     list_display = ['asset', 'seriale', 'tipo_dispositivo', 'produttore', 'modello', 'data_installazione',
                     'data_dismissione', 'fine_garanzia', 'utente', 'location', ]
 
-    list_filter = [FiltroUtenteAttivo, 'location', 'tipo_dispositivo', ]
+    list_filter = [FiltroUtenteAttivo, FiltroDispositivoDismesso, 'location', 'tipo_dispositivo',  ]
 
     search_fields = ['asset', 'seriale', 'produttore__produttore', 'modello__modello', 'utente__nome',
                      'utente__cognome', ]
@@ -153,7 +190,7 @@ class TipoDispositivoAdmin(admin.ModelAdmin):
     model = Tipo_Dispositivo
     list_display = ['tipo_dispositivo']
 
-    ####### funzione per cancellare dalla lista l'action "delete_selected" ##########
+####### funzione per cancellare dalla lista l'action "delete_selected" ##########
 
     def get_actions(self, request):
         actions = super(TipoDispositivoAdmin, self).get_actions(request)
@@ -170,7 +207,7 @@ class TipoDispositivoAdmin(admin.ModelAdmin):
             '/static/js/notifIt.js',
         )
 
-        #################################################################################
+#################################################################################
 
 
 class ProduttoreAdmin(admin.ModelAdmin):
@@ -211,7 +248,7 @@ class ModelloAdmin(admin.ModelAdmin):
             del actions['delete_selected']
         return actions
 
-    #################################################################################
+#################################################################################
 
     class Media:
         js = (
